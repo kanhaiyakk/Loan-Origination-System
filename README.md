@@ -45,7 +45,7 @@ Java 17 | Spring Boot | Spring Data JPA | MySQL | Lombok | JUnit & Mockito
 
 ##  API Endpoints
 
- **1. Submit Loan Application**  
+**1. Submit Loan Application**  
 `POST /api/v1/loans`  
 Request Body:
 ```
@@ -59,45 +59,50 @@ Request Body:
 }
 ```
 
- **2. Trigger Loan Processing**  
+**2. Trigger Loan Processing**  
 Method: `POST`  
 URL: `/api/v1/loans/process`  
 Request Body: None  
 Status:  Tested – Loan processing triggered for all APPLIED loans.
 
- **3. Get Loans By Status (With Pagination)**  
+**3. Get Loans By Status (With Pagination)**  
 Method: `GET`  
 URL: `/api/v1/loans?status=APPROVED_BY_SYSTEM&page=0&size=5`  
 Request Body: None  
 Status:  Tested – Returns list of loans filtered by status with pagination.
 
- **4. Get Loan Status Counts**  
+**4. Get Loan Status Counts**  
 Method: `GET`  
 URL: `/api/v1/loans/status-count`  
 Request Body: None  
 Status:  Tested – Returns real-time count of loans in each status.
 
- **5. Top Customers API**  
+**5. Top Customers API**  
 Method: `GET`  
 URL: `/api/v1/customers/top`  
 Request Body: None  
 Status:  Tested – Returns top 3 customers with most approved loans.
 
- **6. Agent Decision Endpoint**  
+**6. Agent Decision Endpoint**  
 Method: `PUT`  
 URL: `/api/v1/agents/{agent_id}/loans/{loan_id}/decision`  
 Request Body (examples):
+```
 {
 "decision": "APPROVE"
 }
+```
 or
+```
 {
 "decision": "REJECT"
 }
+```
+
 
 Status:  Tested – Agent decision recorded and loan status updated.
 
- **7. Create Agent (Direct DB Insert)**  
+**7. Create Agent (Direct DB Insert)**  
 Method: `INSERT INTO DB`  
 Table: `agents`  
 Columns: `agent_id, name, manager_id`  
@@ -105,11 +110,24 @@ Example SQL:
 INSERT INTO agents (agent_id, name) VALUES (UUID(), 'Rohan Sharma');
 Status:  Tested – Agent created successfully in database.
 
- **Summary**  
- All endpoints have been tested for success and failure cases, ensuring:
+**Summary**  
+All endpoints have been tested for success and failure cases, ensuring:
 - Clean modular architecture
 - Multithreading functionality with system approval simulation
 - Agent assignment and decision-making flow
 - Mock notification integration
 - Real-time loan status monitoring
 - Top customer aggregation
+
+Future Enhancements
+
+Dockerise the application for containerised deployment
+
+Integrate external credit score APIs
+
+Add authentication and role-based authorisation
+
+Build CI/CD pipeline for automated deployments
+
+👤 Author
+Kanhaiya Kumar
