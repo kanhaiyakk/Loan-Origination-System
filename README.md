@@ -48,11 +48,14 @@ Java 17 | Spring Boot | Spring Data JPA | MySQL | Lombok | JUnit & Mockito
 🔹 **1. Submit Loan Application**  
 `POST /api/v1/loans`  
 Request Body:
+
 {
+
 "customerName": "Ravi Kumar",
 "customerPhone": "9876543210",
 "loanAmount": 250000,
 "loanType": "PERSONAL"
+
 }
 
 
