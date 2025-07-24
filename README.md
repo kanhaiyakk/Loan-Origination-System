@@ -1,8 +1,8 @@
-# 🏦 Loan Origination System (LOS)
+#  Loan Origination System (LOS)
 
 A robust Spring Boot application to process, approve, and manage loan applications with agent-manager hierarchies and notification simulations.
 
-## 🚀 Features
+##  Features
 - Submit new loan applications
 - Automated multithreaded loan processing
 - Agent assignment for under-review loans
@@ -12,10 +12,10 @@ A robust Spring Boot application to process, approve, and manage loan applicatio
 - Get loan status counts
 - Top customers API
 
-## 🛠️ Tech Stack
+##  Tech Stack
 Java 17 | Spring Boot | Spring Data JPA | MySQL | Lombok | JUnit & Mockito
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
 1. **Clone Repository**
     ```
@@ -43,9 +43,9 @@ Java 17 | Spring Boot | Spring Data JPA | MySQL | Lombok | JUnit & Mockito
     ```
    App runs at: `http://localhost:8080`
 
-## 📡 API Endpoints
+##  API Endpoints
 
-🔹 **1. Submit Loan Application**  
+ **1. Submit Loan Application**  
 `POST /api/v1/loans`  
 Request Body:
 
@@ -59,31 +59,31 @@ Request Body:
 }
 
 
-🔹 **2. Trigger Loan Processing**  
+ **2. Trigger Loan Processing**  
 Method: `POST`  
 URL: `/api/v1/loans/process`  
 Request Body: None  
-Status: ✔️ Tested – Loan processing triggered for all APPLIED loans.
+Status:  Tested – Loan processing triggered for all APPLIED loans.
 
-🔹 **3. Get Loans By Status (With Pagination)**  
+ **3. Get Loans By Status (With Pagination)**  
 Method: `GET`  
 URL: `/api/v1/loans?status=APPROVED_BY_SYSTEM&page=0&size=5`  
 Request Body: None  
-Status: ✔️ Tested – Returns list of loans filtered by status with pagination.
+Status:  Tested – Returns list of loans filtered by status with pagination.
 
-🔹 **4. Get Loan Status Counts**  
+ **4. Get Loan Status Counts**  
 Method: `GET`  
 URL: `/api/v1/loans/status-count`  
 Request Body: None  
-Status: ✔️ Tested – Returns real-time count of loans in each status.
+Status:  Tested – Returns real-time count of loans in each status.
 
-🔹 **5. Top Customers API**  
+ **5. Top Customers API**  
 Method: `GET`  
 URL: `/api/v1/customers/top`  
 Request Body: None  
-Status: ✔️ Tested – Returns top 3 customers with most approved loans.
+Status:  Tested – Returns top 3 customers with most approved loans.
 
-🔹 **6. Agent Decision Endpoint**  
+ **6. Agent Decision Endpoint**  
 Method: `PUT`  
 URL: `/api/v1/agents/{agent_id}/loans/{loan_id}/decision`  
 Request Body (examples):
@@ -95,18 +95,18 @@ or
 "decision": "REJECT"
 }
 
-Status: ✔️ Tested – Agent decision recorded and loan status updated.
+Status:  Tested – Agent decision recorded and loan status updated.
 
-🔹 **7. Create Agent (Direct DB Insert)**  
+ **7. Create Agent (Direct DB Insert)**  
 Method: `INSERT INTO DB`  
 Table: `agents`  
 Columns: `agent_id, name, manager_id`  
 Example SQL:
 INSERT INTO agents (agent_id, name) VALUES (UUID(), 'Rohan Sharma');
-Status: ✔️ Tested – Agent created successfully in database.
+Status:  Tested – Agent created successfully in database.
 
-✨ **Summary**  
-✅ All endpoints have been tested for success and failure cases, ensuring:
+ **Summary**  
+ All endpoints have been tested for success and failure cases, ensuring:
 - Clean modular architecture
 - Multithreading functionality with system approval simulation
 - Agent assignment and decision-making flow
