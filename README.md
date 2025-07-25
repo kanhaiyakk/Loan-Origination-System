@@ -129,5 +129,6 @@ Add authentication and role-based authorisation
 
 Build CI/CD pipeline for automated deployments
 
-👤 Author
+Author
+
 Kanhaiya Kumar
