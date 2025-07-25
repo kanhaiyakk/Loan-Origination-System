@@ -43,7 +43,7 @@ Java 17 | Spring Boot | Spring Data JPA | MySQL | Lombok | JUnit & Mockito
     ```
    App runs at: `http://localhost:8080`
 
-## 🧪 API Testing Collection
+##  API Testing Collection
 
 You can find the Postman collection for testing all endpoints [here](https://.postman.co/workspace/My-Workspace~188ccfe6-762a-4571-8494-b5609ea05c4c/collection/33356666-5052c807-8d5c-4efc-953b-8f2ab93c1e35?action=share&creator=33356666).
 
